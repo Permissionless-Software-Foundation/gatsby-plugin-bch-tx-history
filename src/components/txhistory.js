@@ -10,6 +10,7 @@ class TXHistory extends React.Component {
     super(props)
 
     this.walletInfo = props.walletInfo
+    console.log(`constructor walletInfo: `, props.walletInfo)
   }
 
   render() {
