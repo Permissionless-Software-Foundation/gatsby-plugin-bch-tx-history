@@ -31,7 +31,7 @@ class TXHistory extends React.Component {
   async handleGetTxHistory() {
     try {
       const walletInfo = this.walletInfo
-      console.log(`walletInfo: `, walletInfo)
+      console.log(`walletInfo: `, this.props.walletInfo)
 
       console.log("Entering handleGetTxHistory()");
       // debugger;
