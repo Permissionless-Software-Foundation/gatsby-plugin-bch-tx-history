@@ -6,6 +6,12 @@ const BchWallet = typeof window !== "undefined" ? window.SlpWallet : null;
 // let _this
 
 class TXHistory extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.walletInfo = props.walletInfo
+  }
+
   render() {
     return (
       <Row>
@@ -23,7 +29,7 @@ class TXHistory extends React.Component {
 
   async handleGetTxHistory() {
     try {
-      const walletInfo = this.props.walletInfo
+      const walletInfo = this.walletInfo
       console.log(`walletInfo: `, walletInfo)
 
       console.log("Entering handleGetTxHistory()");
