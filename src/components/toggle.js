@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react'
 
-let _this;
+// let _this
 
 class POToggle extends React.Component {
-  render() {
+  render () {
     return (
       <div>
         <h3>This is a plugin component</h3>
       </div>
-    );
+    )
   }
 }
 
-export default POToggle;
+export default POToggle
