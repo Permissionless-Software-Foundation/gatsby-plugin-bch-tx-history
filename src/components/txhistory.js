@@ -26,6 +26,8 @@ class TXHistory extends React.Component {
     );
   }
 
+  // This event handler would use the minimal-slp-wallet-web library to retrieve
+  // the transaction history for the address.
   async handleGetTxHistory() {
     try {
       console.log("Entering handleGetTxHistory()");
