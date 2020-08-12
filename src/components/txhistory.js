@@ -3,14 +3,12 @@ import { Row, Col, Button } from "adminlte-2-react";
 
 const BchWallet = typeof window !== "undefined" ? window.SlpWallet : null;
 
-// let _this
-
 class TXHistory extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
-    this.walletInfo = props.walletInfo
-    console.log(`constructor walletInfo: `, props.walletInfo)
+    this.walletInfo = props.walletInfo;
+    console.log(`constructor walletInfo: `, props.walletInfo);
   }
 
   render() {
@@ -30,14 +28,7 @@ class TXHistory extends React.Component {
 
   async handleGetTxHistory() {
     try {
-      const walletInfo = this.walletInfo
-      console.log(`walletInfo: `, this.props.walletInfo)
-
       console.log("Entering handleGetTxHistory()");
-      // debugger;
-
-      const txs = await BchWallet.getTransactions();
-      console.log(`txs: ${JSON.stringify(txs, null, 2)}`);
     } catch (err) {
       console.error(
         `Error in gatsby-plugin-bch-tx-history/handleGetTxHistory(): `,
