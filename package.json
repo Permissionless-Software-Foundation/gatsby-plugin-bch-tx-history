@@ -12,5 +12,16 @@
     "gatsby-plugin"
   ],
   "author": "Chris Troutner <chris.troutner@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "semantic-release": "^17.1.1"
+  },
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": false
+      }
+    ]
+  }
 }
