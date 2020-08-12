@@ -1,10 +1,10 @@
 {
-  "name": "@chris.troutner/gatsby-plugin-temp",
+  "name": "gatsby-plugin-bch-tx-history",
   "version": "1.0.0",
-  "description": "A minimal boilerplate for the essential files Gatsby looks for in a plugin",
+  "description": "Gatsby Plugin to display TX History in bch-wallet-starter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo no tests yet",
     "build": "echo \"No build script setup\""
   },
   "keywords": [
@@ -12,5 +12,5 @@
     "gatsby-plugin"
   ],
   "author": "Chris Troutner <chris.troutner@gmail.com>",
-  "license": "0BSD"
+  "license": "MIT"
 }
