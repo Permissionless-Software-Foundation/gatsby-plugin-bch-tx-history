@@ -1,11 +1,16 @@
 import React from 'react'
 import { Row, Col, Button } from 'adminlte-2-react'
 
-const BchWallet = typeof window !== 'undefined' ? window.SlpWallet : null
-
-// let _this
+// const BchWallet = typeof window !== 'undefined' ? window.SlpWallet : null
 
 class TXHistory extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.walletInfo = props.walletInfo
+    console.log('constructor walletInfo: ', props.walletInfo)
+  }
+
   render () {
     return (
       <Row>
@@ -21,13 +26,11 @@ class TXHistory extends React.Component {
     )
   }
 
+  // This event handler would use the minimal-slp-wallet-web library to retrieve
+  // the transaction history for the address.
   async handleGetTxHistory () {
     try {
       console.log('Entering handleGetTxHistory()')
-      // debugger;
-
-      const txs = await BchWallet.getTransactions()
-      console.log(`txs: ${JSON.stringify(txs, null, 2)}`)
     } catch (err) {
       console.error(
         'Error in gatsby-plugin-bch-tx-history/handleGetTxHistory(): ',
