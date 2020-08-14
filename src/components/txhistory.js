@@ -4,7 +4,7 @@ import { Row, Col, Button } from 'adminlte-2-react'
 // const BchWallet = typeof window !== 'undefined' ? window.SlpWallet : null
 let _this
 class TXHistory extends React.Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     _this = this
     this.state = {
@@ -15,7 +15,7 @@ class TXHistory extends React.Component {
     // console.log('constructor walletInfo: ', props.walletInfo)
   }
 
-  render() {
+  render () {
     const { transactions } = _this.state
     return (
       <Row>
@@ -30,34 +30,32 @@ class TXHistory extends React.Component {
 
         {/* Show the transactions */}
         <Col sm={12}>
-          {
-            transactions.map(val => {
-              return <div key={val} className='text-center mt-1 mb-1'>
+          {transactions.map((val) => {
+            return (
+              <div key={val} className='text-center mt-1 mb-1'>
                 {val}
               </div>
-            })
-          }
-        </Col>
-
-        { /*Close the transaction list*/}
-        <Col className='text-center mt-2 mb-2'>
-        {
-            transactions.length > 0 && (
-              <Button
-                text='Close'
-                type='primary'
-                className='btn-lg'
-                onClick={this.handleCleanTransactions}
-              />
             )
-          }
+          })}
         </Col>
 
+        {/* Close the transaction list */}
+        <Col className='text-center mt-2 mb-2'>
+          {transactions.length > 0 && (
+            <Button
+              text='Close'
+              type='primary'
+              className='btn-lg'
+              onClick={this.handleCleanTransactions}
+            />
+          )}
+        </Col>
       </Row>
     )
   }
-  componentDidUpdate() {
-    //Update state if a new wallet is detected
+
+  componentDidUpdate () {
+    // Update state if a new wallet is detected
     if (_this.state.bchWallet !== _this.props.bchWallet) {
       _this.setState({
         bchWallet: _this.props.bchWallet, // Update wallet instance
@@ -68,14 +66,14 @@ class TXHistory extends React.Component {
 
   // This event handler would use the minimal-slp-wallet-web library to retrieve
   // the transaction history for the address.
-  async handleGetTxHistory() {
+  async handleGetTxHistory () {
     try {
       console.log('Entering handleGetTxHistory()')
 
       const { bchWallet } = _this.state
       if (!bchWallet) throw new Error('Wallet not found!')
 
-      const transactions = await bchWallet.getTransactions();
+      const transactions = await bchWallet.getTransactions()
 
       _this.setState({
         transactions
@@ -87,8 +85,9 @@ class TXHistory extends React.Component {
       )
     }
   }
+
   // Clean the transaction list with an empty array
-  handleCleanTransactions() {
+  handleCleanTransactions () {
     _this.setState({
       transactions: []
     })
@@ -96,4 +95,3 @@ class TXHistory extends React.Component {
 }
 
 export default TXHistory
-
