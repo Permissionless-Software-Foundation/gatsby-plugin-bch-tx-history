@@ -3,6 +3,6 @@
   primary component for this plugin.
 */
 
-import TXHistory from 'src/components/txhistory'
+import TXHistory from './src/components/txhistory'
 
 export default TXHistory
