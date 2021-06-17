@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-bch-tx-history",
-  "version": "1.0.0",
+  "version": "1.1.4",
   "description": "Gatsby Plugin to display TX History in bch-wallet-starter",
   "main": "index.js",
   "scripts": {
